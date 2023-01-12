@@ -1,0 +1,390 @@
+@font-face {
+  font-family: 'More Sugar';
+  src: url('../fonts/More_Sugar.otf');
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-130%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-130%);
+  }
+}
+
+@keyframes rigthIn {
+  0% {
+    transform: translateX(130%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.mapboxgl-ctrl-bottom-right {
+  display: none;
+}
+
+.mapboxgl-ctrl-bottom-left {
+  display: none;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.marker {
+  background-image: url('../images/roundMarker.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 20px;
+}
+
+.logo {
+  display: flex;
+  width: 447px;
+  height: 144px;
+  background-color: #1b1b1b;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 2000;
+  bottom: 62px;
+  right: 72px;
+}
+
+.image {
+  width: 360;
+  height: 84px;
+}
+
+.slide1 {
+  width: 1357px;
+  height: 1140px;
+  background-image: url('../images/hiiker-logo-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.slide1__title {
+  font-family: 'More Sugar';
+  position: absolute;
+  top: 367px;
+  left: 110px;
+  font-weight: 400;
+  line-height: 1.39;
+  font-size: 124px;
+  color: #fff;
+}
+
+.slide1__subtitle {
+  font-family: 'More Sugar';
+  position: absolute;
+  top: 575px;
+  left: 110px;
+  font-weight: 400;
+  line-height: 1.39;
+  font-size: 60px;
+  color: #fff;
+}
+
+.slide1__date {
+  position: absolute;
+  top: 740px;
+  left: 110px;
+  width: 490px;
+  height: 87.65px;
+  border-radius: 9.63px;
+  font-family: 'Lato';
+  font-size: 40.4554px;
+  line-height: 3.7;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #1b1b1b;
+  background-color: #70c381;
+}
+
+.container-hidden {
+  display: flex;
+  z-index: 2000;
+  opacity: 0;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  z-index: 2000;
+  opacity: 1;
+}
+
+.slide2 {
+  position: absolute;
+  background: transparent;
+  top: 0;
+}
+
+.box {
+  position: relative;
+  width: 410px;
+  height: 196px;
+  margin-top: 54px;
+  opacity: 0.8;
+  border-radius: 7.17897px;
+  background-color: #1b1b1b;
+  z-index: 2000;
+}
+
+.property {
+  position: absolute;
+  top: 36px;
+  left: 50px;
+  font-family: 'Lato';
+  font-size: 31px;
+
+  color: #ffc107;
+}
+
+.value {
+  position: absolute;
+  bottom: 36px;
+  left: 50px;
+  font-family: 'Lato';
+  font-size: 55px;
+
+  line-height: 1.7;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.container .box:nth-child(-n + 3) {
+  margin-right: 30px;
+}
+
+.container .box:nth-child(1) {
+  margin-left: 92px;
+}
+
+.presentation {
+  background-image: url('../images/line.svg');
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #1b1b1b;
+  z-index: 2000;
+}
+
+.logo-footer {
+  opacity: 0;
+  width: 591px;
+  height: 135px;
+  z-index: 2000;
+  position: absolute;
+  top: 261px;
+  left: 151px;
+}
+
+.phone {
+  transform: translateX(130%);
+
+  position: absolute;
+  z-index: 2000;
+  bottom: 21px;
+  right: 69px;
+  width: 602px;
+  height: 890px;
+}
+
+.icons {
+  opacity: 0;
+  z-index: 2000;
+  display: flex;
+  position: absolute;
+  bottom: 193px;
+}
+
+.google {
+  z-index: 2000;
+  width: 402px;
+  height: 115px;
+  margin-left: 160px;
+  margin-right: 57px;
+}
+
+.ios {
+  z-index: 3000;
+  width: 402px;
+  height: 115px;
+}
+
+.presentation-text {
+  opacity: 0;
+  font-family: 'More Sugar';
+  z-index: 2000;
+  position: absolute;
+  top: 506px;
+  left: 160px;
+  width: 1113px;
+  height: 176px;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 1.48;
+  color: #ababab;
+}
+
+.distance {
+  transform: translateY(-130%);
+
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  position: relative;
+  width: 410px;
+  height: 196px;
+  margin-top: 54px;
+  border-radius: 7.17897px;
+  background-color: rgba(27, 27, 27, 0.8);
+  z-index: 2000;
+}
+
+.elevation {
+  transform: translateY(-130%);
+
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  position: relative;
+  width: 410px;
+  height: 196px;
+  margin-top: 54px;
+  border-radius: 7.17897px;
+  background-color: rgba(27, 27, 27, 0.8);
+  z-index: 2000;
+}
+
+.duration {
+  transform: translateY(-130%);
+
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  position: relative;
+  width: 410px;
+  height: 196px;
+  margin-top: 54px;
+  border-radius: 7.17897px;
+  background-color: rgba(27, 27, 27, 0.8);
+  z-index: 2000;
+}
+
+.elevation-profile {
+  transform: translateY(-130%);
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  position: relative;
+  width: 410px;
+  height: 196px;
+  margin-top: 54px;
+  border-radius: 7.17897px;
+  background-color: rgba(27, 27, 27, 0.8);
+  z-index: 2000;
+}
+
+.line-chart {
+  position: absolute;
+  bottom: -2px;
+}
