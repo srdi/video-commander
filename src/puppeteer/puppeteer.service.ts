@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Page, Browser, launch } from 'puppeteer';
 import PuppeteerVideoRecorder from '../lib/videoRecorder';
-import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
+// import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
 
 export interface Result {
   err?: any;
